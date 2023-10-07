@@ -87,7 +87,7 @@ snippet good morning:
 ### Linux or MacOS
 
 ```bash
-SNIPPETS_VERSION="0.0.0"
+SNIPPETS_VERSION="0.0.1"
 SNIPPETS_OS="linux" # or darwin
 SNIPPETS_ARCH="arm64" # or amd64
 wget https://github.com/bots-garden/snippets/releases/download/v${SNIPPETS_VERSION}/minism-v${SNIPPETS_VERSION}-${SNIPPETS_OS}-${SNIPPETS_ARCH}
@@ -105,7 +105,7 @@ snippets version
 ```bash
 docker run \
     -v $(pwd)/samples:/samples \
-    --rm botsgarden/snippets:0.0.0  \
+    --rm botsgarden/snippets:0.0.1  \
     ./snippets generate \
     --input samples/js.yml \
     --output samples/js.code-snippets 
