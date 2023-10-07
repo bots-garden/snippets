@@ -2,6 +2,7 @@ package main
 
 import (
 	"encoding/json"
+	"errors"
 	"flag"
 	"fmt"
 	"os"
@@ -9,6 +10,7 @@ import (
 
 	_ "embed"
 
+	"github.com/go-resty/resty/v2"
 	"gopkg.in/yaml.v3"
 )
 
@@ -85,6 +87,29 @@ func writeJsonFile(jsonFilePath string, jsonData []byte) error {
 	return nil
 }
 
+func downloadYamlFile(yamlFileUrl, authHeaderName, authHeaderValue, saveFilePath string) error {
+	// authenticationHeader:
+	// Example: "PRIVATE-TOKEN: ${GITLAB_WASM_TOKEN}"
+	client := resty.New()
+
+	if authHeaderName != "" {
+		client.SetHeader(authHeaderName, authHeaderValue)
+	}
+
+	resp, err := client.R().
+		SetOutput(saveFilePath).
+		Get(yamlFileUrl)
+
+	if resp.IsError() {
+		return errors.New("error while downloading the yaml file")
+	}
+
+	if err != nil {
+		return err
+	}
+	return nil
+}
+
 func parse(command string, args []string) error {
 	switch command {
 
@@ -95,7 +120,20 @@ func parse(command string, args []string) error {
 		input := flagSet.String("input", "", "input yaml file path")
 		output := flagSet.String("output", "", "output json file path")
 
+		yamFileUrl := flagSet.String("url", "", "Url to download the yaml file")
+		authHeaderName := flagSet.String("auth-header-name", "", "Authentication header name, ex: PRIVATE-TOKEN")
+		authHeaderValue := flagSet.String("auth-header-value", "", "Value of the authentication header, ex: IlovePandas")
+
 		flagSet.Parse(args[0:])
+
+		if *yamFileUrl != "" { // we need to download the yaml file
+			fmt.Println("🌍 downloading ", *yamFileUrl, "...")
+			err := downloadYamlFile(*yamFileUrl, *authHeaderName, *authHeaderValue, *input)
+			if err != nil {
+				fmt.Println("😡", err.Error())
+				os.Exit(1)
+			}
+		}
 
 		yamlData, err := readYamlFile(*input)
 		if err != nil {

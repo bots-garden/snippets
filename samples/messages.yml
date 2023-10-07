@@ -1,0 +1,16 @@
+snippet hello world:
+  prefix: "txt-hello-world"
+  name: "hello world"
+  description: "This is the hello world plugin"
+  scope: ""
+  body: |
+    👋 hello world 🌍
+
+snippet good morning:
+  prefix: "txt-good-morning"
+  name: "good morning"
+  description: "this is the good morning plugin"
+  scope: ""
+  body: |
+    👋 good morning ${1:name}
+

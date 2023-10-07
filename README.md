@@ -12,6 +12,20 @@ snippets generate \
   --output ../.vscode/js.code-snippets 
 ```
 
+You can download a remote yaml file:
+```bash
+snippets generate \
+  --url https://raw.githubusercontent.com/bots-garden/golab-demos/main/snippets-demo/messages.yml \
+  --input samples/messages.yml \
+  --output ../.vscode/messages.code-snippets 
+```
+> if you need to use authentication header (ex: `"PRIVATE-TOKEN: mytokenvalue"
+`), use the following flags:
+> ```bash
+> --auth-header-name PRIVATE-TOKEN
+> --auth-header-value mytokenvalue
+> ``` 
+
 ### Input `yaml` file (example)
 
 ```yaml
