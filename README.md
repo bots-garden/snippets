@@ -19,7 +19,7 @@ snippets generate \
   --input samples/messages.yml \
   --output ../.vscode/messages.code-snippets 
 ```
-> if you need to use authentication header (ex: `"PRIVATE-TOKEN: mytokenvalue"
+> if you need to use an authentication header (ex: `"PRIVATE-TOKEN: mytokenvalue"
 `), use the following flags:
 > ```bash
 > --auth-header-name PRIVATE-TOKEN
