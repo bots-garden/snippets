@@ -4,6 +4,9 @@
 
 > Snippets is a small tool (without dependency)
 
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/bots-garden/snippets)
+
+
 ## Usage
 
 ```bash
