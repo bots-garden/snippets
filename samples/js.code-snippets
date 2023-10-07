@@ -1,0 +1,25 @@
+{
+  "good morning": {
+    "body": [
+      "function goodMorning(name) {",
+      "  console.log(\"👋\", name, \"${1:message}\")",
+      "  console.log(\"${2:message}\")",
+      "}",
+      ""
+    ],
+    "description": "this is the good morning plugin",
+    "prefix": "js-plugin-good-morning",
+    "scope": "javascript"
+  },
+  "hello world": {
+    "body": [
+      "function helloWorld() {",
+      "  console.log(\"👋 hello world 🌍\")",
+      "}",
+      ""
+    ],
+    "description": "This is the hello world plugin",
+    "prefix": "js-plugin-hello-world",
+    "scope": "javascript"
+  }
+}

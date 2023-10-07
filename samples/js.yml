@@ -1,0 +1,20 @@
+snippet hello world:
+  prefix: "js-plugin-hello-world"
+  name: "hello world"
+  description: "This is the hello world plugin"
+  scope: "javascript"
+  body: |
+    function helloWorld() {
+      console.log("👋 hello world 🌍")
+    }
+
+snippet good morning:
+  prefix: "js-plugin-good-morning"
+  name: "good morning"
+  description: "this is the good morning plugin"
+  scope: "javascript"
+  body: |
+    function goodMorning(name) {
+      console.log("👋", name, "${1:message}")
+      console.log("${2:message}")
+    }
