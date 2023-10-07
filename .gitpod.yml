@@ -1,0 +1,13 @@
+image:
+  file: .gitpod.dockerfile
+
+vscode:
+  extensions:
+    - PKief.material-icon-theme
+    - PKief.material-product-icons
+    - DaltonMenezes.aura-theme
+    - GitHub.github-vscode-theme
+    - huytd.github-light-monochrome
+    - wesbos.theme-cobalt2
+    - aaron-bond.better-comments
+    - golang.go
