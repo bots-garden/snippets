@@ -1,6 +1,6 @@
 module snippet
 
-go 1.21.1
+go 1.23.1
 
 require github.com/go-resty/resty/v2 v2.9.1
 

@@ -1,0 +1,11 @@
+{
+  "show 01": {
+    "body": [
+      "app = typer.Typer()",
+      "# remove main"
+    ],
+    "description": "",
+    "prefix": "show01",
+    "scope": "python"
+  }
+}

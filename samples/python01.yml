@@ -1,0 +1,7 @@
+snippet show01:
+  prefix: "show01"
+  name: "show 01"
+  scope: "python"
+  body: |
+    app = typer.Typer()
+    # remove main

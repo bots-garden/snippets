@@ -1,4 +1,4 @@
-package main
+package snippets
 
 import (
 	"encoding/json"
@@ -46,7 +46,7 @@ func readYamlFile(yamlFilePath string) (map[string]YamlSnippet, error) {
 	return data, nil
 }
 
-func generateJsonSnippets(yamlSnippets map[string]YamlSnippet) ([]byte, error) {
+func generateVSCodeSnippets(yamlSnippets map[string]YamlSnippet) ([]byte, error) {
 	VSCodeSnippets := make(map[string]interface{})
 
 	for _, snippet := range yamlSnippets {
@@ -140,7 +140,7 @@ func parse(command string, args []string) error {
 			fmt.Println("😡", err.Error())
 			os.Exit(1)
 		}
-		jsonData, err := generateJsonSnippets(yamlData)
+		jsonData, err := generateVSCodeSnippets(yamlData)
 		if err != nil {
 			fmt.Println("😡", err.Error())
 			os.Exit(1)
