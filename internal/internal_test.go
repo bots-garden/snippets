@@ -1,4 +1,4 @@
-package snippets
+package internal
 
 import (
 	"os"
@@ -7,13 +7,13 @@ import (
 
 func TestGenerateVSCodeSnippets(t *testing.T) {
 	yamlFilePath := "samples/python01.yml"
-	yamlData, err := readYamlFile(yamlFilePath)
+	yamlData, err := ReadYamlFile(yamlFilePath)
 	if err != nil {
 		t.Errorf("failed to read YAML file: %v", err)
 		return
 	}
 
-	jsonSnippets, err := generateVSCodeSnippets(yamlData)
+	jsonSnippets, err := GenerateVSCodeSnippets(yamlData)
 	if err != nil {
 		t.Errorf("failed to generate JSON snippets: %v", err)
 		return
