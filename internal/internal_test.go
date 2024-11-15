@@ -6,7 +6,7 @@ import (
 )
 
 func TestGenerateVSCodeSnippets(t *testing.T) {
-	yamlFilePath := "samples/python01.yml"
+	yamlFilePath := "../samples/python01.yml"
 	yamlData, err := ReadYamlFile(yamlFilePath)
 	if err != nil {
 		t.Errorf("failed to read YAML file: %v", err)
@@ -19,7 +19,7 @@ func TestGenerateVSCodeSnippets(t *testing.T) {
 		return
 	}
 
-	codeSnippetsFilePath := "samples/python01.code-snippets"
+	codeSnippetsFilePath := "../samples/python01.code-snippets"
 	expectedJsonSnippets, err := os.ReadFile(codeSnippetsFilePath)
 	if err != nil {
 		t.Errorf("failed to read code snippets file: %v", err)

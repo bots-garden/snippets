@@ -1,0 +1,27 @@
+version: '3'
+
+tasks:
+  build-release:
+    cmds:
+      - |
+        ./build-release.sh
+
+  create-release:
+    cmds:
+      - ./create-release.sh
+
+  docker-build-image:
+    cmds:
+      - ./docker-build-image.sh
+
+  remote-run:
+    cmds:
+      - ./remote-run.sh
+
+  remove-release:
+    cmds:
+      - ./remove-release.sh
+  
+  test:
+    cmds:
+      - go test -v ./...
