@@ -1,4 +1,4 @@
-package snippets
+package main
 
 import (
 	"os"
